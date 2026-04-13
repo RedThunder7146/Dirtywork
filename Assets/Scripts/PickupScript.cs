@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,14 +15,14 @@ public class PickupScript : MonoBehaviour
     public float pickUpDistance;
     private void Start()
     {
-        pickupAction = InputSystem.actions.FindAction("Interact");
+        pickupAction = InputSystem.actions.FindAction("Attack");
     }
 
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         { 
            if (objectGrabbable == null)
             {
