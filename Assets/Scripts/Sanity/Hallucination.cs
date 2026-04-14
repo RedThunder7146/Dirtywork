@@ -6,6 +6,7 @@ public class Hallucination : MonoBehaviour
     public bool willSpawn;
     public SanityBar sanityBar;
     public Transform spawner;
+    public GameObject spawnerGameObj;
 
     // Update is called once per frame
     void Update()
@@ -32,13 +33,15 @@ public class Hallucination : MonoBehaviour
         GameObject rndHallucination = hallucinations[hallucination];
         if (willSpawn == true)
         {
-            Instantiate(rndHallucination, transform.position,transform.rotation);
+            rndHallucination.SetActive(true);
+            spawnerGameObj.SetActive(false);
+            
         }
-        rndHallucination.AddComponent<HallucinationScript>();
+        
+        
 
 
 
-        Destroy(gameObject);
 
     }
 }
