@@ -8,20 +8,18 @@ public class HallucinationScript : MonoBehaviour
     public SanityBar sanityBar;
     public Transform hallucination;
     public GameObject halluGameObj;
+    public int rnd;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rnd = Random.Range(70, 90);
     }
 
     // Update is called once per frame
     void Update()
     {
-        int rnd = Random.Range(80, 100);
-
-
         float sanity = sanityBar.sanity;
 
         if (rnd <= sanity)
@@ -43,6 +41,23 @@ public class HallucinationScript : MonoBehaviour
             spawner.SetActive(true);
             halluGameObj.SetActive(false);
             
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            sanityBar.halluMult = 2;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            sanityBar.halluMult = 1;
         }
     }
 }

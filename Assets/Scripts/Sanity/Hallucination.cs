@@ -7,11 +7,17 @@ public class Hallucination : MonoBehaviour
     public SanityBar sanityBar;
     public Transform spawner;
     public GameObject spawnerGameObj;
+    public int rnd;
+    private void Start()
+    {
+        rnd = Random.Range(10, 60);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        int rnd = Random.Range(0, 60);
+        
 
 
         float sanity = sanityBar.sanity;

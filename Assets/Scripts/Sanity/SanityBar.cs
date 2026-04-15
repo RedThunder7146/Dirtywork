@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SanityBar : MonoBehaviour
@@ -15,6 +16,7 @@ public class SanityBar : MonoBehaviour
     public int mult = 1;
     public Slider sanitySlider;
     float timer = 0;
+    public float halluMult = 1;
     InputAction interactAction;
 
 
@@ -60,13 +62,25 @@ public class SanityBar : MonoBehaviour
 
     public void SanityDropSystem()
     {
-        sanity = sanity - Time.deltaTime*1*mult;
-        sanitySlider.value = sanity;
+        if (sanity > 0)
+        {
+            sanity = sanity - Time.deltaTime * 1 * mult * halluMult;
+            sanitySlider.value = sanity;
+        }
+
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
 
     public void SanityRiseSystem()
     {
-        sanity = sanity + Time.deltaTime*5;
+        if (sanity < 100)
+        {
+            sanity = sanity + Time.deltaTime * 5;
+        }
     }
 
 
@@ -76,7 +90,6 @@ public class SanityBar : MonoBehaviour
 
         timer = timer + Time.deltaTime;
         float timerRounded = Mathf.RoundToInt(timer);
-        print (timerRounded);
         int timerMult= Mathf.FloorToInt(timerRounded/60);
         mult=1 + timerMult;
 

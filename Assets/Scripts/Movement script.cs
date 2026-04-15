@@ -73,15 +73,14 @@ public class Movementscript : MonoBehaviour
         Vector3 moveVal = moveAction.ReadValue<Vector3>();
         moveVal.y = 0;
 
-        if (moveVal.x != 0 || moveVal.z != 0)
-        {
-            Vector3 currentLookDirection = cam.forward;
-            currentLookDirection.y = 0; 
+        
+        Vector3 currentLookDirection = cam.forward;
+        currentLookDirection.y = 0; 
 
-            Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection);
+        Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection);
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed);
-        }
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed);
+        
         
         
         
