@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 18d18255b0c5f4a5389678bb007c8a5f
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 160939
+  packageName: Music - A Childs Dream
+  packageVersion: 1.0
+  assetPath: Assets/SD Sound Track - A Childs Dream/A Childs Dream (2min 33s - Music
+    Box Solo + Effects - Loopable).wav
+  uploadId: 346894
