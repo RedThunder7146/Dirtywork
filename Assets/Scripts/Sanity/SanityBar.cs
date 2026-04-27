@@ -15,7 +15,7 @@ public class SanityBar : MonoBehaviour
     public float sanity = 100;
     public int mult = 1;
     public Slider sanitySlider;
-    float timer = 0;
+    public float timer = 0;
     public float halluMult = 1;
     InputAction interactAction;
 

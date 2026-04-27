@@ -11,6 +11,15 @@ public class Hallucination : MonoBehaviour
     private void Start()
     {
         rnd = Random.Range(10, 60);
+
+        if (sanityBar == null)
+        {
+
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                sanityBar = GameObject.FindWithTag("Player").GetComponent<SanityBar>();
+            }
+        }
     }
 
 

@@ -17,7 +17,7 @@ public class HousePart : MonoBehaviour
     private LayerMask roomsLayerMask;
 
     [SerializeField]
-    private HousePartType dungeonPartType;
+    private HousePartType housePartType;
 
     [SerializeField]
 
@@ -82,7 +82,7 @@ public class HousePart : MonoBehaviour
         
     }
 
-    public void UnuseEntryPoint(Transform entrypoint)
+    public void UnuseEntrypoint(Transform entrypoint)
     {
         if (entrypoint.TryGetComponent<EntryPoints>(out EntryPoints entry))
         {
