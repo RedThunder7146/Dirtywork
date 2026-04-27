@@ -40,7 +40,7 @@ public class HouseGenerator : MonoBehaviour
 
     private LayerMask roomsLayerMask;
 
-    private List<HousePart>  generatedRooms;
+    private List<HousePart> generatedRooms;
 
     private bool isGenerated;
 
