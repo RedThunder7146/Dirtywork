@@ -22,6 +22,7 @@ public class SanityBar : MonoBehaviour
     public bool sanityRise;
     InputAction interactAction;
     public Transform teleportPos;
+    public CharacterController characterController;
 
 
     private void Start()
@@ -61,8 +62,9 @@ public class SanityBar : MonoBehaviour
         if(other.gameObject.tag == "houseTrig")
         {
             sanityDrop = true;
-            transform.position = teleportPos.transform.position;
-
+            characterController.enabled = false;
+            characterController.transform.position = teleportPos.transform.position;
+            characterController.enabled = true;
             print("Trigger");
         }
     }
@@ -71,7 +73,7 @@ public class SanityBar : MonoBehaviour
     {
         if (sanity > 0)
         {
-            sanity = sanity - Time.deltaTime * 1 * mult * halluMult;
+            sanity = sanity - Time.deltaTime * 1 * halluMult * (mult * 0.5f);
             sanitySlider.value = sanity;
 
         }
@@ -109,7 +111,7 @@ public class SanityBar : MonoBehaviour
     {
         if(sanityRise == true)
         {
-            musicPower = musicPower - Time.deltaTime * 0.2f;
+            musicPower = musicPower - Time.deltaTime * 0.5f;
             musicPowerSlider.value = musicPower;
         }
     }
