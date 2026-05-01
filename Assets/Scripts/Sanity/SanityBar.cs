@@ -11,13 +11,17 @@ public class SanityBar : MonoBehaviour
 
 
     public static SanityBar instance;
+    public float musicPower;
+    public Slider musicPowerSlider;
     public bool sanityDrop = false;
     public float sanity = 100;
     public int mult = 1;
     public Slider sanitySlider;
     public float timer = 0;
     public float halluMult = 1;
+    public bool sanityRise;
     InputAction interactAction;
+    public Transform teleportPos;
 
 
     private void Start()
@@ -27,12 +31,6 @@ public class SanityBar : MonoBehaviour
 
     void Update()
     {
-
-
-
-
-
-
         sanitySlider.value = sanity;
         if (sanityDrop == true)
         {
@@ -42,7 +40,11 @@ public class SanityBar : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             SanityRiseSystem();
-
+            sanityRise = true;
+        }
+        else
+        {
+            sanityRise = false;
         }
 
 
@@ -50,6 +52,8 @@ public class SanityBar : MonoBehaviour
         {
             SanitySpeedUp();
         }
+
+        MusicPower();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,6 +61,9 @@ public class SanityBar : MonoBehaviour
         if(other.gameObject.tag == "houseTrig")
         {
             sanityDrop = true;
+            transform.position = teleportPos.transform.position;
+
+            print("Trigger");
         }
     }
 
@@ -66,6 +73,7 @@ public class SanityBar : MonoBehaviour
         {
             sanity = sanity - Time.deltaTime * 1 * mult * halluMult;
             sanitySlider.value = sanity;
+
         }
 
         else
@@ -77,9 +85,10 @@ public class SanityBar : MonoBehaviour
 
     public void SanityRiseSystem()
     {
-        if (sanity < 100)
+        if (sanity < 100 && musicPower > 0)
         {
             sanity = sanity + Time.deltaTime * 5;
+            sanityRise = true;
         }
     }
 
@@ -94,5 +103,14 @@ public class SanityBar : MonoBehaviour
         mult=1 + timerMult;
 
         
+    }
+
+    public void MusicPower()
+    {
+        if(sanityRise == true)
+        {
+            musicPower = musicPower - Time.deltaTime * 0.2f;
+            musicPowerSlider.value = musicPower;
+        }
     }
 }

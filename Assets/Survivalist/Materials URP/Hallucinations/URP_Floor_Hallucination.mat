@@ -85,11 +85,12 @@ Material:
     - _Glossiness: 1
     - _UseAoMap: 0
     - _UseColorMap: 0
+    - _UseEmissiveMap: 0
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
     - _UseRoughnessMap: 0
     m_Colors:
-    - _Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
-    - _EmissionColor: {r: 0, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0.00390625, b: 0.00390625, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
