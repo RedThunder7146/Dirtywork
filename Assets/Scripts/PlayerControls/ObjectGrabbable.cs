@@ -4,6 +4,16 @@ using UnityEngine;
 public class ObjectGrabbable : MonoBehaviour
 {
     private Rigidbody rb;
+    public Rigidbody rbHead;
+    public Rigidbody rbLAHigh;
+    public Rigidbody rbRAHigh;
+    public Rigidbody rbLThigh;
+    public Rigidbody rbRThigh;
+    public Rigidbody rbLALow;
+    public Rigidbody rbRALow;
+    public Rigidbody rbRCalf;
+    public Rigidbody rbLCalf;
+
     private Transform objectGrabPointTransform;
     private void Awake()
     {
@@ -16,6 +26,15 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         rb.useGravity = false;
+        rbHead.useGravity = false;
+        rbLAHigh.useGravity = false;
+        rbRAHigh.useGravity = false;
+        rbLThigh.useGravity = false;
+        rbRThigh.useGravity = false;
+        rbLALow.useGravity = false;
+        rbRALow.useGravity = false;
+        rbRCalf.useGravity = false;
+        rbLCalf.useGravity = false;
     }
 
     public void Drop()
