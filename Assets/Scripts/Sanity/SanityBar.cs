@@ -24,6 +24,8 @@ public class SanityBar : MonoBehaviour
     public Transform teleportPos;
     public CharacterController characterController;
 
+    bool noreplay = false;
+
 
     private void Start()
     {
@@ -49,12 +51,36 @@ public class SanityBar : MonoBehaviour
         }
 
 
+
+        if (sanityRise == true&& musicPower >0)
+        {
+            if (noreplay == false)
+            {
+                AudioManager.instance.PlayMusic("CalmMusic");
+                noreplay = true;
+            }
+        }
+
+        if (sanityRise == false)
+        {
+            AudioManager.instance.StopMusic("CalmMusic");
+            noreplay = false;
+        }
+
+
+
+
+
+
+
         if (sanityDrop == true)
         {
             SanitySpeedUp();
         }
 
         MusicPower();
+
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -80,8 +106,12 @@ public class SanityBar : MonoBehaviour
 
         else
         {
-            SceneManager.LoadScene(0);
+            Die();
         }
+
+
+
+
 
     }
 
@@ -115,4 +145,15 @@ public class SanityBar : MonoBehaviour
             musicPowerSlider.value = musicPower;
         }
     }
+
+    public void Die()
+    {
+        if (sanity <= 0)
+        {
+            AudioManager.instance.StopMusic("CalmMusic");
+            SceneManager.LoadScene(0);
+        }
+    }
+
+
 }

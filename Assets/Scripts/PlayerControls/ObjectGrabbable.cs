@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-    private Rigidbody rb;
-    public Rigidbody rbHead;
+    public Rigidbody rb;
+    /*public Rigidbody rbHead;
     public Rigidbody rbLAHigh;
     public Rigidbody rbRAHigh;
     public Rigidbody rbLThigh;
@@ -12,7 +12,7 @@ public class ObjectGrabbable : MonoBehaviour
     public Rigidbody rbLALow;
     public Rigidbody rbRALow;
     public Rigidbody rbRCalf;
-    public Rigidbody rbLCalf;
+    public Rigidbody rbLCalf;*/
 
     private Transform objectGrabPointTransform;
     private void Awake()
@@ -25,7 +25,7 @@ public class ObjectGrabbable : MonoBehaviour
     public void Grab(Transform objectGrabPointTransform)
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
-        rb.useGravity = false;
+       /* rb.useGravity = false;
         rbHead.useGravity = false;
         rbLAHigh.useGravity = false;
         rbRAHigh.useGravity = false;
@@ -35,6 +35,7 @@ public class ObjectGrabbable : MonoBehaviour
         rbRALow.useGravity = false;
         rbRCalf.useGravity = false;
         rbLCalf.useGravity = false;
+       */
     }
 
     public void Drop()

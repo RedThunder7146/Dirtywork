@@ -5,11 +5,9 @@ public class LevelManager : MonoBehaviour
 {
 
     public static LevelManager instance;
-    private int playerHealth;
-    private int playerScore;
-    private int highScore;
-    private int timesPlayed;
-    public static float brightness;
+    private int totalBodies;
+    private int bodies;
+
 
     void Awake()
     {
@@ -28,84 +26,34 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void Start()
+public void AddBodyCount(int bodyCount)
     {
-        // Before reading the key, check to see if a value has been stored in it.
-        if (PlayerPrefs.HasKey("highScore") == true)
-        {
-            // the key musicVol holds a value, therefore we can
-            //retrieve it and store it in a variable
-            highScore = PlayerPrefs.GetInt("highScore");
-        }
-        else
-        {
-            // the key musicVol is null so give it a default value of 0.5f
-            PlayerPrefs.SetInt("highScore", 0);
-        }
+        totalBodies += bodyCount;
+        print(totalBodies);
 
-        if (PlayerPrefs.HasKey("timesPlayed") == true)
-        {
-            // the key musicVol holds a value, therefore we can
-            //retrieve it and store it in a variable
-            timesPlayed = PlayerPrefs.GetInt("timesPlayed");
-            timesPlayed += 1;
-            PlayerPrefs.SetInt("timesPlayed", timesPlayed);
+        bodies = totalBodies;
+    }
 
-        }
-        else
-        {
-            // the key musicVol is null so give it a default value of 0.5f
-            PlayerPrefs.SetInt("timesPlayed", 0);
+    public int GetBodyCount()
+        { return totalBodies; }
 
-            Scene scene = SceneManager.GetActiveScene();
+    public void SubBodyCount(int bodyCount)
+    {
+        bodies -= bodyCount;
+    }
+
+    public int GetSubbedBodyCount()
+    {
+        return bodies;
+    }
+
+    public void ResetScene()
+    {
+        if (10<= GetBodyCount() - GetSubbedBodyCount())
+        {
+            SceneManager.LoadScene(1);
         }
     }
-
-    public void SetPlayerHealth(int pHealth)
-    {
-        playerHealth = pHealth;
-    }
-    public void AddPlayerHealth(int pHealthDep)
-    {
-        playerHealth -= pHealthDep;
-    }
-    public int GetPlayerHealth()
-    {
-        return playerHealth;
-    }
-    public void SetPlayerScore(int score)
-    {
-        playerScore = score;
-    }
-    public void AddPlayerScore(int scoreToAdd)
-    {
-        playerScore += scoreToAdd;
-        SetHighScore();
-    }
-    public int GetPlayerScore()
-    {
-        return playerScore;
-    }
-
-    public void SetHighScore()
-    {
-        if (playerScore > highScore)
-        {
-            highScore = playerScore;
-            PlayerPrefs.SetInt("highScore", highScore);
-        }
-    }
-
-    public int GetHighScore()
-    {
-        return highScore;
-    }
-    public int GetTimesPlayed()
-    {
-        return timesPlayed;
-    }
-
-
 
 
 }

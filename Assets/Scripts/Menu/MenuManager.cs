@@ -16,7 +16,6 @@ public class MenuManager : MonoBehaviour
     public GameObject quitMenu;
     public GameObject videoSettingsMenu;
     public GameObject startMenu;
-    public GameObject difficultyMenu;
     public GameObject start;
     public GameObject controls;
     public Toggle fullscreen;
@@ -41,7 +40,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartScreen()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         mainMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -59,7 +58,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OptionsMenu()
     {
-        difficultyMenu.SetActive(false);
+       
         startMenu.SetActive(false);
         mainMenu.SetActive(false);
         optionsMenu.SetActive(true);
@@ -73,7 +72,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OptionsMenuFromStart()
     {
-        difficultyMenu.SetActive(false);
+
         mainMenu.SetActive(false);
         startMenu.SetActive(false);
         volumeMenu.SetActive(false);
@@ -90,7 +89,7 @@ public class MenuManager : MonoBehaviour
 
     public void MainMenu()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         startMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -105,7 +104,7 @@ public class MenuManager : MonoBehaviour
     }
     public void MainMenuFromOptions()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         optionsMenu.SetActive(false);
         volumeMenu.SetActive(false);
@@ -124,7 +123,7 @@ public class MenuManager : MonoBehaviour
 
     public void QuitMenu()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         mainMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -140,7 +139,7 @@ public class MenuManager : MonoBehaviour
 
     public void VolumeMenu()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         volumeMenu.SetActive(true);
         mainMenu.SetActive(false);
@@ -151,7 +150,7 @@ public class MenuManager : MonoBehaviour
     }
     public void VideoSettingsMenu()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         volumeMenu.SetActive(false);
         mainMenu.SetActive(false);
@@ -162,7 +161,7 @@ public class MenuManager : MonoBehaviour
     }
     public void StartMenuFromMenu()
     {
-        difficultyMenu.SetActive(false);
+
         volumeMenu.SetActive(false);
         mainMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -175,21 +174,11 @@ public class MenuManager : MonoBehaviour
 
         StartCoroutine("StartMenuWait");
     }
-    public void DifficultyMenu()
-    {
-        difficultyMenu.SetActive(true);
-        startMenu.SetActive(false);
-        volumeMenu.SetActive(false);
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(false);
-        quitMenu.SetActive(false);
-        videoSettingsMenu.SetActive(false);
-        controls.SetActive(false);
-    }
+
 
     public void ControlMenu()
     {
-        difficultyMenu.SetActive(false);
+
         startMenu.SetActive(false);
         volumeMenu.SetActive(false);
         mainMenu.SetActive(false);
