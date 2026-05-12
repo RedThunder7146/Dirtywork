@@ -16,6 +16,9 @@ public class PickupScript : MonoBehaviour
     private void Start()
     {
         pickupAction = InputSystem.actions.FindAction("Attack");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 
@@ -31,7 +34,7 @@ public class PickupScript : MonoBehaviour
                     print(raycasthit.transform);
                     if (raycasthit.transform.TryGetComponent(out objectGrabbable))
                     {
-                        objectGrabbable.Grab(objectGrabPointTransform);
+                        objectGrabbable.Grab();
                     }
 
                 }

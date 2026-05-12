@@ -3,58 +3,69 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-    public Rigidbody rb;
-    /*public Rigidbody rbHead;
-    public Rigidbody rbLAHigh;
-    public Rigidbody rbRAHigh;
-    public Rigidbody rbLThigh;
-    public Rigidbody rbRThigh;
-    public Rigidbody rbLALow;
-    public Rigidbody rbRALow;
-    public Rigidbody rbRCalf;
-    public Rigidbody rbLCalf;*/
 
-    private Transform objectGrabPointTransform;
-    private void Awake()
+
+    public  Transform objectGrabPointTransform;
+    public Rigidbody pelvis;
+    public Rigidbody lArmUp;
+    public Rigidbody lArmDown;
+    public Rigidbody rArmUp;
+    public Rigidbody rArmDown;
+    public Rigidbody rThigh;
+    public Rigidbody lThigh;
+    public Rigidbody rCalf;
+    public Rigidbody lCalf;
+    public Rigidbody head;
+
+
+
+
+    public void Grab()
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        transform.parent = objectGrabPointTransform.transform;
+        pelvis.useGravity = false;
+        lArmUp.useGravity = false;
+        lArmDown.useGravity = false;
+        rArmUp.useGravity = false;
+        rArmDown.useGravity = false;
+        lCalf.useGravity = false;
+        head.useGravity = false;
+        lThigh.useGravity = false;
+        rCalf.useGravity = false;
+        rThigh.useGravity = false;
 
-
-
-    public void Grab(Transform objectGrabPointTransform)
-    {
-        this.objectGrabPointTransform = objectGrabPointTransform;
-       /* rb.useGravity = false;
-        rbHead.useGravity = false;
-        rbLAHigh.useGravity = false;
-        rbRAHigh.useGravity = false;
-        rbLThigh.useGravity = false;
-        rbRThigh.useGravity = false;
-        rbLALow.useGravity = false;
-        rbRALow.useGravity = false;
-        rbRCalf.useGravity = false;
-        rbLCalf.useGravity = false;
-       */
+        pelvis.linearVelocity = Vector3.zero;
+        lArmUp.linearVelocity = Vector3.zero;
+        lArmDown.linearVelocity = Vector3.zero;
+        rArmUp.linearVelocity = Vector3.zero;
+        rArmDown.linearVelocity = Vector3.zero;
+        lCalf.linearVelocity = Vector3.zero;
+        head.linearVelocity = Vector3.zero;
+        lThigh.linearVelocity = Vector3.zero;
+        rCalf.linearVelocity = Vector3.zero;
+        rThigh.linearVelocity = Vector3.zero;
     }
 
     public void Drop()
     {
-        this.objectGrabPointTransform = null;
-        rb.useGravity = true;
-        rb.linearVelocity = Vector3.zero;
+        transform.parent = null;
+        GetComponent<Rigidbody>().useGravity = true;
+
+        pelvis.useGravity = true;
+        lArmUp.useGravity = true;
+        lArmDown.useGravity = true;
+        rArmUp.useGravity = true;
+        rArmDown.useGravity = true;
+        lCalf.useGravity = true;
+        head.useGravity = true;
+        lThigh.useGravity = true;
+        rCalf.useGravity = true;
+        rThigh.useGravity = true;
     }
 
-    private void FixedUpdate()
-    {
-        if (objectGrabPointTransform != null)
-        {
-            float lerpSpeed = 10f;
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime*lerpSpeed);
-            rb.MovePosition(newPosition);
-        }
 
-    }
+
+    
 
 
 

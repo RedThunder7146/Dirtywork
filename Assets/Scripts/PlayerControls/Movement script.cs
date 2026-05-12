@@ -57,7 +57,7 @@ public class Movementscript : MonoBehaviour
         if ((moveValue.x != 0) || (moveValue.z != 0))
         {
             anim.SetBool("IsWalking", true);
-            AudioManager.instance.PlaySoundEffect("WalkOnWood");
+            //AudioManager.instance.PlaySoundEffect("WalkOnWood");
         }
         else
         {

@@ -84,7 +84,7 @@ public class SanityBar : MonoBehaviour
             print(soundTimer);
         }
 
-        
+        print(sanity / -50 +1+1);
 
         sanitySlider.value = sanity;
         if (sanityDrop == true)
@@ -119,8 +119,9 @@ public class SanityBar : MonoBehaviour
             noreplay = false;
         }
 
-
-
+        Color newColor = Color.black;
+        newColor.a = sanity / -50 + 1;
+        fadeToBlack.GetComponent<Image>().color = newColor;
 
 
 
@@ -151,10 +152,9 @@ public class SanityBar : MonoBehaviour
     {
         if (sanity > 0)
         {
-            Material currentMat = fadeToBlack.GetComponent<Renderer>().material;
-            Color oldColor = currentMat.color;
-            Color currentColor = new Color(oldColor.r,oldColor.g,oldColor.b,sanity);
-            currentMat.SetColor("_Color", currentColor);
+
+
+            
             sanity = sanity - Time.deltaTime * 1 * halluMult * (mult * 0.5f);
             sanitySlider.value = sanity;
 
