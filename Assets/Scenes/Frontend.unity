@@ -8545,7 +8545,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 08fbbcada5adc964793f0e7cce5c4dad, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
   - musicSource: {fileID: 1782815413}
     SFXSource: {fileID: 1629452568}
     musicMixer: {fileID: -6803343090376107932, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
@@ -8554,7 +8554,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0c2c386482d966940beec8e4bb7d9e7e, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
   - musicSource: {fileID: 1782815413}
     SFXSource: {fileID: 1629452568}
     musicMixer: {fileID: -6803343090376107932, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
@@ -8563,7 +8563,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c6bead6f554cb4b4f8ee496eda4112fa, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
   - musicSource: {fileID: 1782815413}
     SFXSource: {fileID: 1629452568}
     musicMixer: {fileID: -6803343090376107932, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
@@ -8572,7 +8572,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6ab4878bdd672484d80ea6b1acd3b647, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
   - musicSource: {fileID: 1782815413}
     SFXSource: {fileID: 1629452568}
     musicMixer: {fileID: -6803343090376107932, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
@@ -8581,16 +8581,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9fa57b0e88853874886e1e6afa5249d5, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
   - musicSource: {fileID: 1782815413}
     SFXSource: {fileID: 1629452568}
     musicMixer: {fileID: -6803343090376107932, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
     SFXMixer: {fileID: -7394981106245641660, guid: 09440cc6392ed6b47a14eed2d36c8cfc, type: 2}
     name: WalkOnWood
-    clip: {fileID: 8300000, guid: 4329a9d9283c43c4abd7a96ebf0c98f8, type: 3}
+    clip: {fileID: 8300000, guid: 8ce3efaefff563945a15d9ff7b21df1a, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
 --- !u!1001 &697357107
 PrefabInstance:
   m_ObjectHideFlags: 0

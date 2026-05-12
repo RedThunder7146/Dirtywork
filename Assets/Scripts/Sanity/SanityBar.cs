@@ -1,5 +1,3 @@
-using System;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,7 +7,10 @@ public class SanityBar : MonoBehaviour
 {
 
 
-
+    public int soundRND;
+    public int rndSound;
+    public float soundTimer;
+    public string sound;
     public static SanityBar instance;
     public float musicPower;
     public Slider musicPowerSlider;
@@ -23,6 +24,7 @@ public class SanityBar : MonoBehaviour
     InputAction interactAction;
     public Transform teleportPos;
     public CharacterController characterController;
+    public GameObject fadeToBlack;
 
     bool noreplay = false;
 
@@ -30,10 +32,60 @@ public class SanityBar : MonoBehaviour
     private void Start()
     {
         interactAction = InputSystem.actions.FindAction("Interact");
+        soundRND = Random.Range(0, 30);
+        rndSound = Random.Range(0, 4);
+        
+
+        
     }
 
     void Update()
     {
+        if (sanityDrop == true)
+        {
+            soundTimer = soundTimer + Time.deltaTime;
+        }
+
+        if (rndSound == 0)
+        {
+            sound = "TerrifyingWind";
+        }
+
+        if (rndSound == 1)
+        {
+            sound = "EerieWind";
+        }
+
+        if (rndSound == 2)
+        {
+            sound = "EerieWind2";
+        }
+
+        if (rndSound == 3)
+        {
+            sound = "Knocking";
+        }
+
+        if (rndSound == 4)
+        {
+            sound = "SneakOnWood";
+        }
+
+        if (soundTimer >= soundRND)
+        {
+            AudioManager.instance.PlaySoundEffect(sound);
+            soundRND = Random.Range(0, 30);
+            print(soundRND);
+            print(rndSound);
+
+            rndSound = Random.Range(0, 4);
+            soundTimer = 0;
+
+            print(soundTimer);
+        }
+
+        
+
         sanitySlider.value = sanity;
         if (sanityDrop == true)
         {
@@ -99,6 +151,10 @@ public class SanityBar : MonoBehaviour
     {
         if (sanity > 0)
         {
+            Material currentMat = fadeToBlack.GetComponent<Renderer>().material;
+            Color oldColor = currentMat.color;
+            Color currentColor = new Color(oldColor.r,oldColor.g,oldColor.b,sanity);
+            currentMat.SetColor("_Color", currentColor);
             sanity = sanity - Time.deltaTime * 1 * halluMult * (mult * 0.5f);
             sanitySlider.value = sanity;
 

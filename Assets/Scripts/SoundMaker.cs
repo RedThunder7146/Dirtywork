@@ -43,13 +43,7 @@ public class SoundMaker : MonoBehaviour
         }
 
 
-        if (timer <= soundRND )
-        {
-            AudioManager.instance.PlaySoundEffect(sound);
-            soundRND = Random.Range(0, 30);
-            rndSound = Random.Range(0, 4);
-            timer = 0;
-        }
+        
 
 
     }
@@ -57,6 +51,12 @@ public class SoundMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer <= soundRND)
+        {
+            AudioManager.instance.PlaySoundEffect(sound);
+            soundRND = Random.Range(0, 30);
+            rndSound = Random.Range(0, 4);
+            timer = 0;
+        }
     }
 }
