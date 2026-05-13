@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -34,9 +35,9 @@ public class SanityBar : MonoBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         soundRND = Random.Range(0, 30);
         rndSound = Random.Range(0, 4);
-        
+        AudioManager.instance.PlaySoundEffect("Breathing");
 
-        
+
     }
 
     void Update()
@@ -122,9 +123,9 @@ public class SanityBar : MonoBehaviour
         Color newColor = Color.black;
         newColor.a = sanity / -50 + 1;
         fadeToBlack.GetComponent<Image>().color = newColor;
-
-
-
+    
+        AudioManager.instance.sounds[4].SFXSource.volume = sanity / -50 + 1+0.1f;
+        
 
         if (sanityDrop == true)
         {
@@ -208,6 +209,8 @@ public class SanityBar : MonoBehaviour
         {
             AudioManager.instance.StopMusic("CalmMusic");
             SceneManager.LoadScene(0);
+            AudioManager.instance.StopSoundEffect("Breathing");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
