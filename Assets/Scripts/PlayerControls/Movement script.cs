@@ -13,11 +13,12 @@ public class Movementscript : MonoBehaviour
     [SerializeField] private float gravity = 9.81f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] public Animator anim;
-
+    bool walk = false;
+    bool walkOutside = false;
     private float verticalVelocity;
 
     [Header("Input actions")]
-
+    public SanityBar sanityBar;
     InputAction moveAction;
     InputAction jumpAction;
     InputAction lookAction;
@@ -57,11 +58,27 @@ public class Movementscript : MonoBehaviour
         if ((moveValue.x != 0) || (moveValue.z != 0))
         {
             anim.SetBool("IsWalking", true);
-            //AudioManager.instance.PlaySoundEffect("WalkOnWood");
+            if (walk == false && sanityBar.sanityDrop == true)
+            {
+                AudioManager.instance.PlaySoundEffect("WalkOnWood");
+                AudioManager.instance.StopSoundEffect("WalkOutside");
+                walk = true;
+            }
+
+            if (walkOutside == false && sanityBar.sanityDrop ==  false)
+            {
+                AudioManager.instance.PlaySoundEffect("WalkOutside");
+                walkOutside = true;
+            }
+
         }
         else
         {
             anim.SetBool("IsWalking", false);
+            walk = false;
+            walkOutside = false;
+            AudioManager.instance.StopSoundEffect("WalkOnWood");
+            AudioManager.instance.StopSoundEffect("WalkOutside");
         }
 
 

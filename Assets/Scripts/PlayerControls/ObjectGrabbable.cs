@@ -16,6 +16,7 @@ public class ObjectGrabbable : MonoBehaviour
     public Rigidbody rCalf;
     public Rigidbody lCalf;
     public Rigidbody head;
+    public Transform pelvisTrans;
 
 
 
@@ -42,7 +43,7 @@ public class ObjectGrabbable : MonoBehaviour
 
     public void Drop()
     {
-        transform.parent = null;
+        transform.parent = pelvisTrans;
         GetComponent<Rigidbody>().useGravity = true;
 
         GetComponent<Rigidbody>().isKinematic = false;

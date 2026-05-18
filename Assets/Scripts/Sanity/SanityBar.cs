@@ -28,6 +28,7 @@ public class SanityBar : MonoBehaviour
     public GameObject fadeToBlack;
 
     bool noreplay = false;
+    bool replay = true;
 
 
     private void Start()
@@ -82,10 +83,10 @@ public class SanityBar : MonoBehaviour
             rndSound = Random.Range(0, 4);
             soundTimer = 0;
 
-            print(soundTimer);
+            
         }
 
-        print(sanity / -50 +1+1);
+        
 
         sanitySlider.value = sanity;
         if (sanityDrop == true)
@@ -119,6 +120,16 @@ public class SanityBar : MonoBehaviour
             AudioManager.instance.StopMusic("CalmMusic");
             noreplay = false;
         }
+
+        if (sanityDrop == true)
+        {
+            if(replay == true)
+            {
+                AudioManager.instance.PlayMusic("HorrorAmbience");
+                replay = false;
+            }
+        }
+
 
         Color newColor = Color.black;
         newColor.a = sanity / -50 + 1;
@@ -208,7 +219,9 @@ public class SanityBar : MonoBehaviour
         if (sanity <= 0)
         {
             AudioManager.instance.StopSoundEffect("Breathing");
+            AudioManager.instance.StopMusic("HorrorAmbience");
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             sanityDrop = false;
             AudioManager.instance.StopMusic("CalmMusic");
             SceneManager.LoadScene(0);

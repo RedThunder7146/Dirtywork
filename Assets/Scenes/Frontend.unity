@@ -8590,7 +8590,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8ce3efaefff563945a15d9ff7b21df1a, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
 --- !u!1001 &697357107
 PrefabInstance:
   m_ObjectHideFlags: 0
