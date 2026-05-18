@@ -5,7 +5,7 @@ public class ObjectGrabbable : MonoBehaviour
 {
 
 
-    public  Transform objectGrabPointTransform;
+    public Transform objectGrabPointTransform;
     public Rigidbody pelvis;
     public Rigidbody lArmUp;
     public Rigidbody lArmDown;
@@ -16,6 +16,8 @@ public class ObjectGrabbable : MonoBehaviour
     public Rigidbody rCalf;
     public Rigidbody lCalf;
     public Rigidbody head;
+
+
 
 
 
@@ -34,16 +36,8 @@ public class ObjectGrabbable : MonoBehaviour
         rCalf.useGravity = false;
         rThigh.useGravity = false;
 
-        pelvis.linearVelocity = Vector3.zero;
-        lArmUp.linearVelocity = Vector3.zero;
-        lArmDown.linearVelocity = Vector3.zero;
-        rArmUp.linearVelocity = Vector3.zero;
-        rArmDown.linearVelocity = Vector3.zero;
-        lCalf.linearVelocity = Vector3.zero;
-        head.linearVelocity = Vector3.zero;
-        lThigh.linearVelocity = Vector3.zero;
-        rCalf.linearVelocity = Vector3.zero;
-        rThigh.linearVelocity = Vector3.zero;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
     }
 
     public void Drop()
@@ -51,6 +45,7 @@ public class ObjectGrabbable : MonoBehaviour
         transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true;
 
+        GetComponent<Rigidbody>().isKinematic = false;
         pelvis.useGravity = true;
         lArmUp.useGravity = true;
         lArmDown.useGravity = true;
@@ -61,6 +56,8 @@ public class ObjectGrabbable : MonoBehaviour
         lThigh.useGravity = true;
         rCalf.useGravity = true;
         rThigh.useGravity = true;
+
+        
     }
 
 

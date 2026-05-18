@@ -207,10 +207,12 @@ public class SanityBar : MonoBehaviour
     {
         if (sanity <= 0)
         {
-            AudioManager.instance.StopMusic("CalmMusic");
-            SceneManager.LoadScene(0);
             AudioManager.instance.StopSoundEffect("Breathing");
             Cursor.lockState = CursorLockMode.None;
+            sanityDrop = false;
+            AudioManager.instance.StopMusic("CalmMusic");
+            SceneManager.LoadScene(0);
+            
         }
     }
 

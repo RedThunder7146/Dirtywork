@@ -49,7 +49,7 @@ public void AddBodyCount(int bodyCount)
 
     public void ResetScene()
     {
-        if (10<= GetBodyCount() - GetSubbedBodyCount())
+        if (20<= GetBodyCount() - GetSubbedBodyCount())
         {
             SceneManager.LoadScene(1);
         }
