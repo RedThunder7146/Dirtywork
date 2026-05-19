@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TerrainTools;
@@ -7,6 +8,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     private int totalBodies;
     private int bodies;
+    private int count = 10;
+    
 
 
     void Awake()
@@ -40,6 +43,13 @@ public void AddBodyCount(int bodyCount)
     public void SubBodyCount(int bodyCount)
     {
         bodies -= bodyCount;
+        count -= bodyCount;
+        
+    }
+
+    public int BodyCounter()
+    {
+        return count;
     }
 
     public int GetSubbedBodyCount()
@@ -49,7 +59,7 @@ public void AddBodyCount(int bodyCount)
 
     public void ResetScene()
     {
-        if (20<= GetBodyCount() - GetSubbedBodyCount())
+        if (10<= GetBodyCount() - GetSubbedBodyCount())
         {
             SceneManager.LoadScene(1);
         }

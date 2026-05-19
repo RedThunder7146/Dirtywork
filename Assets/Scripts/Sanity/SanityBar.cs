@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +28,7 @@ public class SanityBar : MonoBehaviour
     public CharacterController characterController;
     public GameObject fadeToBlack;
 
+
     bool noreplay = false;
     bool replay = true;
 
@@ -43,6 +45,8 @@ public class SanityBar : MonoBehaviour
 
     void Update()
     {
+        
+
         if (sanityDrop == true)
         {
             soundTimer = soundTimer + Time.deltaTime;

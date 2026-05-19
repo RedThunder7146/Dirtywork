@@ -20,6 +20,7 @@ public class ExitScript : MonoBehaviour
             {
                 foreach (GameObject mesh in meshes)
                 {
+                    print("Destroy " + mesh);
                     Destroy(mesh);
                 }
 
