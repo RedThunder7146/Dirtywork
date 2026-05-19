@@ -2,22 +2,37 @@ using UnityEngine;
 
 public class ExitScript : MonoBehaviour
 {
-    public Transform pelvis;
+    public GameObject[] meshes;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Part")
+        if(other.gameObject.tag == "Exit")
         {
-            other.transform.parent = pelvis;
+            if (gameObject.tag == "Part")
+            {
+                print("Destroy" + gameObject);
+                Destroy(gameObject);
+            }
+
+
+            if (gameObject.tag == "Pickup")
+            {
+                foreach (GameObject mesh in meshes)
+                {
+                    Destroy(mesh);
+                }
+
+
+                print("Destroy " + gameObject);
+                LevelManager.instance.SubBodyCount(1);
+                print(LevelManager.instance.GetSubbedBodyCount());
+                Destroy(gameObject);
+                LevelManager.instance.ResetScene();
+            }
         }
 
 
-        if (other.gameObject.tag == "Pickup")
-        {
-            LevelManager.instance.SubBodyCount(1);
-            print(LevelManager.instance.GetSubbedBodyCount());
-            Destroy(other.gameObject);
-            LevelManager.instance.ResetScene();
-        }
+        
     }
 }
