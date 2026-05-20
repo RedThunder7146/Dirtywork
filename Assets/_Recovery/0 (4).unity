@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.07
+  m_AmbientIntensity: 0.84
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 97637a2a763b7f24b8da4e139e4144ca, type: 2}
@@ -6095,7 +6095,7 @@ Transform:
   m_GameObject: {fileID: 192787773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.011, y: 0.077, z: 0}
+  m_LocalPosition: {x: 0.007, y: -0.145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12432,8 +12432,8 @@ Light:
   m_Color: {r: 0.34901962, g: 0, b: 0.59607846, a: 1}
   m_Intensity: 454.05
   m_Range: 68
-  m_SpotAngle: 30.749104
-  m_InnerSpotAngle: 0
+  m_SpotAngle: 43.638096
+  m_InnerSpotAngle: 35.440174
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 0
@@ -22392,8 +22392,7 @@ PrefabInstance:
       value: 4.033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6983198129803797855, guid: 83580bb875791c844a2d9b88052616ae, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4285517774211487330, guid: 83580bb875791c844a2d9b88052616ae, type: 3}
@@ -24710,7 +24709,7 @@ Transform:
   m_GameObject: {fileID: 714354291}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.47, y: 0, z: -0.8}
+  m_LocalPosition: {x: -11.473114, y: 0, z: -8.25}
   m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -27489,7 +27488,6 @@ GameObject:
   - component: {fileID: 813622790}
   - component: {fileID: 813622794}
   - component: {fileID: 813622793}
-  - component: {fileID: 813622795}
   m_Layer: 6
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -27663,20 +27661,6 @@ MonoBehaviour:
       Wait: 1
       Time: 2
     Restrictions: 0
---- !u!114 &813622795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813622788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b000152871c668d4e98f28dfb50aba48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightChange
-  ultra_Violet_Light: {fileID: 398165442}
-  torch: {fileID: 233295728}
 --- !u!1001 &814257546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50819,7 +50803,7 @@ Transform:
   m_GameObject: {fileID: 1486099701}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.07, y: 0, z: -7.77}
   m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -50874,9 +50858,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: aca758ccda0d545499681d69d49ef29b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 0.2784314}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: 78f7117e55e9da04084fe8873747bf95, type: 3}
+  m_Color: {r: 0, g: 0.8679245, b: 0, a: 0.2784314}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.94, y: 5.58}
@@ -67164,7 +67148,7 @@ Transform:
   m_GameObject: {fileID: 2029566493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 360.22, y: 0.2, z: 1608.54}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:

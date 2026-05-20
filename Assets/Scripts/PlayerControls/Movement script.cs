@@ -22,6 +22,9 @@ public class Movementscript : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     InputAction lookAction;
+    public GameObject footprint;
+    public Transform footprintSpawner;
+    float counter = 0;
 
 
 
@@ -57,6 +60,8 @@ public class Movementscript : MonoBehaviour
 
         if ((moveValue.x != 0) || (moveValue.z != 0))
         {
+ 
+
             anim.SetBool("IsWalking", true);
             if (walk == false && sanityBar.sanityDrop == true)
             {
@@ -64,6 +69,11 @@ public class Movementscript : MonoBehaviour
                 AudioManager.instance.StopSoundEffect("WalkOutside");
                 walk = true;
             }
+
+            Footprints();
+
+
+            
 
             if (walkOutside == false && sanityBar.sanityDrop ==  false)
             {
@@ -79,6 +89,7 @@ public class Movementscript : MonoBehaviour
             walkOutside = false;
             AudioManager.instance.StopSoundEffect("WalkOnWood");
             AudioManager.instance.StopSoundEffect("WalkOutside");
+
         }
 
 
@@ -131,6 +142,17 @@ public class Movementscript : MonoBehaviour
     }
 
 
+    void Footprints()
+    {
 
+
+        counter += Time.deltaTime;
+
+        if (counter > 1)
+        {
+            footprint = Instantiate(footprint, footprintSpawner.transform.position, footprintSpawner.transform.rotation);
+            counter = 0;
+        }
+    }
     
 }
