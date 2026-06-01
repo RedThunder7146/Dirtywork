@@ -3408,18 +3408,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'W - Forward
+  m_text: 'W - Forward   Space - Switch
 
-    A - Left
+    A - Left                    torch
 
-    S - Backwards
+    S
+    - Backwards           type
 
     D - Right
 
-    Left
-    CLick - Pick up
+    Left CLick - Pick up
 
-    E - Play Music
+    E -
+    Play Music
 
 '
   m_isRightToLeft: 0

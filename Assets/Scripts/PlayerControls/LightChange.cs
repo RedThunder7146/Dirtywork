@@ -7,7 +7,7 @@ public class LightChange : MonoBehaviour
     public GameObject torch;
     InputAction torchSwitch;
     bool uvOn = true;
-    bool torchOn = false;
+    bool torchOn = true;
     float count = 0;
 
     private void Start()

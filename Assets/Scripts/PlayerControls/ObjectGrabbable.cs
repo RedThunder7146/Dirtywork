@@ -17,6 +17,7 @@ public class ObjectGrabbable : MonoBehaviour
     public Rigidbody lCalf;
     public Rigidbody head;
     public Transform pelvisTrans;
+    public Rigidbody spine;
 
 
 
@@ -36,6 +37,7 @@ public class ObjectGrabbable : MonoBehaviour
         lThigh.useGravity = false;
         rCalf.useGravity = false;
         rThigh.useGravity = false;
+        spine.useGravity = false;
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
@@ -57,6 +59,7 @@ public class ObjectGrabbable : MonoBehaviour
         lThigh.useGravity = true;
         rCalf.useGravity = true;
         rThigh.useGravity = true;
+        spine.useGravity = true;
 
         
     }
